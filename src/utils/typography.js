@@ -1,7 +1,7 @@
 import Typography from "typography"
 import stannes from "typography-theme-st-annes"
 
-stannes.baseFontSize = '22px'
+stannes.baseFontSize = '18px'
 stannes.overrideThemeStyles = () => ({
   'body, h1, h2, h3, h4, h5, h6': {
     color: "#ddd",
