@@ -1,8 +1,7 @@
 ---
 title: JavaScript从零开始01 | Numbers
 date: "2019-02-10"
-description: 此篇笔记为从零开始学习JavaScript的第一篇,作为我系统性学习JavaScript的开始。
-此系列将会以英文为主。主要学习资料为Mozilla的Documentation。
+description: 此篇笔记为从零开始学习JavaScript的第一篇,作为我系统性学习JavaScript的开始。此系列将会以英文为主。主要学习资料为Mozilla的Documentation。
 ---
 
 # JavaScript Building Blocks: Types

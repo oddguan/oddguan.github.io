@@ -172,9 +172,11 @@
  }
 
  pre[class*="language-"].line-numbers {
+  border: 5px solid #282c34;
   position: relative;
   padding-top: 0;
-	padding-left: 3.8em;
+  padding-bottom: 0;
+	padding-left: 3em;
 	counter-reset: linenumber;
 }
 
