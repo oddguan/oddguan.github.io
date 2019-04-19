@@ -8,6 +8,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import { FaRssSquare } from 'react-icons/fa'
 
 import { rhythm } from "../utils/typography"
 
@@ -38,11 +39,13 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong>.
-              {` `}
+              Written by <strong>{author}</strong>.{` `}
               <a href={`https://instagram.com/${social.instagram}`}>
-                 Follow his Instagram.
+                Follow his Instagram.
               </a>
+              <br />
+              Subscribe to my <a href="/rss.xml"> RSS <FaRssSquare /> </a> Feed.
+              
             </p>
           </div>
         )

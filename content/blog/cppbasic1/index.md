@@ -1,6 +1,6 @@
 ---
 title: C++基础篇01：Hello World!
-date: "2019-04-13"
+date: "2019-04-18"
 description: 被国内面试搞得我不知所措，无奈从头开始学C++。
 ---
 
@@ -22,7 +22,19 @@ int main()
 
 打开terminal，输入
 
-```bash
+```sh
 g++ helloworld.cpp -o helloworld && ./helloworld
 ```
 在terminal中就会出现`Hello World!`,并在敲任意键后退出程序。
+
+### 一些实用技巧
+
+```cpp
+int main() {
+    int i1 = 7.2; // i1 becomes 7
+    int i2 {7.2}; //error: floating point to interger conversion
+    int i3 = {7.2} // same error as above, and the equal sign is redundent
+}
+```
+
+#### Difference between `const` and `constexpr`

@@ -65,7 +65,10 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer style={{color: "#999"}}>
-          © {new Date().getFullYear()} Chenxiao Guan, All Rights Reserved
+          © {new Date().getFullYear()} Chenxiao Guan, All Rights Reserved. 
+          <a href="/rss.xml">
+          Subscribe to my blogs by RSS Feed
+          </a>
         </footer>
       </div>
     )
