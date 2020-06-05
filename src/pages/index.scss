@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+}
+
+.landing-left {
+  width: 60vw;
+}
+
+.landing-right {
+  color: #222;
+  width: 40vw;
+  background-color: #98C398;
+  height: 100vh;
+}
+
+.personal-card {
+  color: #222;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #e2f3e2;
+  left: 50vw;
+  top: 10vh;
+  width: 400px;
+  height: 600px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.15);
+  h2 {
+    color: #222;
+    margin: 0;
+  }
+}
+
+.personal-card-main {
+  flex: 4;
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.personal-card-icon {
+  border-radius: 50%;
+}
+
+.personal-card-title {
+  flex: 3;
+  text-align: center;
+}
+
+.personal-card-name {
+  flex: 5;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.personal-card-bottom {
+  flex: 1;
+  background-color: #e5c07b;
+  max-height: 50px;
+}
+
+.separate {
+  width: 40px;
+  display: inline-block;
+}

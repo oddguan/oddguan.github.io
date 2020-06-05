@@ -1,76 +1,52 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import "./index.scss";
 
-import './index.css'
-
-class BlogIndex extends React.Component {
+class PageIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-
+    const { data } = this.props;
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
-      </Layout>
-    )
+      <div className="container">
+        <div className="landing-left">This is on the left</div>
+        <div className="landing-right">This is on the right</div>
+        <div className="personal-card">
+          <div className="personal-card-main">
+            <Img
+              className="personal-card-icon"
+              fixed={data.file.childImageSharp.fixed}
+            />
+          </div>
+          <div className="personal-card-name">
+            <h2>Chenxiao</h2>
+            <h2>Guan</h2>
+          </div>
+          <div className="personal-card-title">
+            <hr className="separate" />
+            <h4>Aspiring Software Engineer</h4>
+          </div>
+          <div className="personal-card-bottom">
+            <FontAwesomeIcon icon={faTwitter} />
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
-export default BlogIndex
+export default PageIndex;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+    file(absolutePath: { regex: "/icon_squared.jpg/" }) {
+      childImageSharp {
+        fixed(width: 175, height: 175) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
   }
-`
+`;

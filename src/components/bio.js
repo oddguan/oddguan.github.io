@@ -44,7 +44,7 @@ function Bio() {
                 Follow his Instagram.
               </a>
               <br />
-              Subscribe to my <a href="/rss.xml"> RSS <FaRssSquare /> </a> Feed.
+              Subscribe to my <a href="/rss.xml"> RSSs <FaRssSquare /> </a> Feed.
               
             </p>
           </div>

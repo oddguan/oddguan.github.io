@@ -8,6 +8,7 @@ module.exports = {
       instagram: `oddguan`,
     },
   },
+  pathPrefix: "/oddguan.io",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -48,9 +49,6 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-prismjs`,
-            options: {
-              showLineNumbers: true,
-            }
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -81,6 +79,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
