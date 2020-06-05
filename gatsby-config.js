@@ -8,7 +8,7 @@ module.exports = {
       instagram: `oddguan`,
     },
   },
-  pathPrefix: "/oddguan.io",
+  pathPrefix: `/oddguan.io`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
