@@ -22,7 +22,7 @@
   width: 400px;
   height: 600px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
-  min-width: 300px;
+  min-width: 350px;
   h2 {
     color: #222;
     margin: 0;
@@ -174,4 +174,10 @@
   50% {
     opacity: 0.0;
   }
+}
+
+#typer {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  display: inline;
 }

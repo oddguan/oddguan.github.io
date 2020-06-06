@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Typed from 'typed.js';
 import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,73 +15,19 @@ import Drawer from '../components/drawer';
 
 class PageIndex extends React.Component {
   componentDidMount() {
-    function setupTypewriter(t) {
-      var HTML = t.innerHTML;
-
-      t.innerHTML = "";
-
-      var cursorPosition = 0,
-        tag = "",
-        writingTag = false,
-        tagOpen = false,
-        typeSpeed = 50,
-        tempTypeSpeed = 0;
-
-      var type = function() {
-        if (writingTag === true) {
-          tag += HTML[cursorPosition];
-        }
-
-        if (HTML[cursorPosition] === "<") {
-          tempTypeSpeed = 0;
-          if (tagOpen) {
-            tagOpen = false;
-            writingTag = true;
-          } else {
-            tag = "";
-            tagOpen = true;
-            writingTag = true;
-            tag += HTML[cursorPosition];
-          }
-        }
-        if (!writingTag && tagOpen) {
-          tag.innerHTML += HTML[cursorPosition];
-        }
-        if (!writingTag && !tagOpen) {
-          if (HTML[cursorPosition] === " ") {
-            tempTypeSpeed = 0;
-          } else {
-            tempTypeSpeed = Math.random() * typeSpeed + 50;
-          }
-          t.innerHTML += HTML[cursorPosition];
-        }
-        if (writingTag === true && HTML[cursorPosition] === ">") {
-          tempTypeSpeed = Math.random() * typeSpeed + 50;
-          writingTag = false;
-          if (tagOpen) {
-            var newSpan = document.createElement("span");
-            t.appendChild(newSpan);
-            newSpan.innerHTML = tag;
-            tag = newSpan.firstChild;
-          }
-        }
-
-        cursorPosition += 1;
-        if (cursorPosition < HTML.length) {
-          setTimeout(type, tempTypeSpeed);
-        }
-      };
-
-      return {
-        type: type,
-      };
-    }
-
-    var typer = document.getElementById("typewriter");
-
-    typer = setupTypewriter(typer);
-
-    typer.type();
+      new Typed("#typer", {
+        strings: [`
+        <span class="highlight-const">const</span> 
+          <span class="highlight-variable">description</span> <span class="highlight-equalsign">=</span> {<br> 
+          &nbsp;&nbsp;<span class="highlight-key">name</span>: <span class="highlight-string">"Chenxiao Guan"</span>,<br>
+          &nbsp;&nbsp;<span class="highlight-key">speaks</span>: [<span class="highlight-string">"English"</span>, <span class="highlight-string">"Chinese"</span>],<br>
+          &nbsp;&nbsp;<span class="highlight-key">interestedIn</span>: [<span class="highlight-string">"Web Development"</span>, <span class="highlight-string">"DevOps"</span>, <span class="highlight-string">"Digital Privacy"</span>],<br>
+          &nbsp;&nbsp;<span class="highlight-key">favoriteLanguage</span>: <span class="highlight-string">"JavaScript"</span>,<br>
+          &nbsp;&nbsp;<span class="highlight-key">frameworkOfChoice</span>: <span class="highlight-string">"React"</span>,<br>
+        };`
+      ],
+        typeSpeed: 30,
+      });
   }
 
   render() {
@@ -117,35 +64,10 @@ class PageIndex extends React.Component {
           </div>
           <div className="self-intro">
             <div className="paragraphs">
-              <h1>Hello There</h1>
-              <h2>Here's who I am and what I do</h2>
+              <h1>Hello There!</h1>
+              <h2>Welcome to my space on the world wide web.</h2>
               <div className="codeblock-wrapper"></div>
-              <pre id="typewriter" className="codeblock">
-                <span className="highlight-const">const</span>{" "}
-                <span className="highlight-variable">description </span>
-                <span className="highlight-equalsign">=</span> {"{\n"}
-                {"  "}
-                <span className="highlight-key">name</span>:{" "}
-                <span className="highlight-string">"Chenxiao Guan"</span>,{" "}
-                {"\n"}
-                {"  "}
-                <span className="highlight-key">speaks</span>: [
-                <span className="highlight-string">"English"</span>,{" "}
-                <span className="highlight-string">"Chinese"</span>], {"\n"}
-                {"  "}
-                <span className="highlight-key">interestedIn</span>: [
-                <span className="highlight-string">"Frontend Development"</span>
-                , <span className="highlight-string">"DevOps"</span>,{" "}
-                <span className="highlight-string">"Digital Privacy"</span>],{" "}
-                {"\n"}
-                {"  "}
-                <span className="highlight-key">favoriteLanguage</span>:{" "}
-                <span className="highlight-string">"JavaScript"</span>, {"\n"}
-                {"  "}
-                <span className="highlight-key">frameworkOfChoice</span>:{" "}
-                <span className="highlight-string">"React"</span>, {"\n"}
-                {"}"};
-              </pre>
+              <div id="typer" />
             </div>
           </div>
         </div>

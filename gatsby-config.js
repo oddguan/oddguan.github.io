@@ -11,6 +11,12 @@ module.exports = {
   pathPrefix: ``,
   plugins: [
     {
+      resolve: `gatsby-rehype-prismjs`,
+      options: {
+        classPrefix: "language-",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -38,8 +44,8 @@ module.exports = {
             resolve: `gatsby-remark-katex`,
             options: {
               // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
+              strict: `ignore`,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
@@ -49,6 +55,12 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: {
+                sh: "bash",
+                "c++": "cpp",
+              },
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -79,7 +91,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -93,4 +105,4 @@ module.exports = {
       },
     },
   ],
-}
+};
