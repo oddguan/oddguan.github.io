@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chenxiao's Blog]]></title><description><![CDATA[This is a technical blog]]></description><link>http://oddguan.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Jun 2020 18:53:02 GMT</lastBuildDate><item><title><![CDATA[A Quick Setup for Express (Node.js), TypeScript, Travis CI, and Azure]]></title><link>http://oddguan.io/express-typescript-azure/</link><guid isPermaLink="false">http://oddguan.io/express-typescript-azure/</guid><pubDate>Mon, 27 Jan 2020 15:42:49 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Implementation of quick sort and partial sort in C++]]></title><description><![CDATA[做了很多道题都用到了quick select的概念。例如215:Kth Largest Element in an Array。
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chenxiao's Blog]]></title><description><![CDATA[This is a technical blog]]></description><link>http://oddguan.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Jun 2020 20:39:20 GMT</lastBuildDate><item><title><![CDATA[A Quick Setup for Express (Node.js), TypeScript, Travis CI, and Azure]]></title><link>http://oddguan.io/express-typescript-azure/</link><guid isPermaLink="false">http://oddguan.io/express-typescript-azure/</guid><pubDate>Mon, 27 Jan 2020 15:42:49 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Implementation of quick sort and partial sort in C++]]></title><description><![CDATA[做了很多道题都用到了quick select的概念。例如215:Kth Largest Element in an Array。
 快排和快选都用到了的概念，即iteratively将array根据其中的一个pivot分割成两部分，使得前半部分小于pivot而后半部分大于pivot…]]></description><link>http://oddguan.io/quicksort/</link><guid isPermaLink="false">http://oddguan.io/quicksort/</guid><pubDate>Fri, 06 Dec 2019 06:19:48 GMT</pubDate><content:encoded>&lt;p&gt;做了很多道题都用到了quick select的概念。例如215:Kth Largest Element in an Array。
 快排和快选都用到了&lt;code class=&quot;language-text&quot;&gt;partition&lt;/code&gt;的概念，即iteratively将array根据其中的一个pivot分割成两部分，使得前半部分小于pivot而后半部分大于pivot。两个算法唯一的区别在于，quick sort在每次partition结束后需要recursively对array的两个部分都要进行继续quick sort，而quick select只需要根据结束后pivot的位置来断定继续想做recursively sort还是向右recursively sort即可。因此，我们假设input array的长度为N，quick select的index为K，则quick sort的amortized runtime为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(NlogN)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10903em;&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10903em;&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,而quick select的runtime为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(NlogK)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10903em;&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.07153em;&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
 &lt;p&gt;写一下快排(quick sort)和快选(quick select)在C++中的实现：&lt;/p&gt;
@@ -248,7 +248,7 @@ inorder = [9,3,15,20,7]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;题目描述如下：
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 517px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 517px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -393,7 +393,7 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;使用命令行参数：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;java  -jar readinglist.jar --spring.main.show-banner=false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;java  -jar readinglist.jar --spring.main.show-banner&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用&lt;code class=&quot;language-text&quot;&gt;application.properties&lt;/code&gt;来配置:&lt;/p&gt;
@@ -407,7 +407,7 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用环境变量&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;export spring_main_show_banner=false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;spring_main_show_banner&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;配置数据源&lt;/h3&gt;
@@ -459,7 +459,7 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@Profile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;production&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;SecurityConfig&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/*...*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;在命令行中：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;java -jar readinglist.jar --spring.profiles.active=production&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;java -jar readinglist.jar --spring.profiles.active&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;production&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Spring测试&lt;/h2&gt;
 &lt;h3&gt;测试web安全&lt;/h3&gt;
 &lt;p&gt;在测试类中：&lt;/p&gt;
@@ -491,7 +491,7 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
 &lt;h2&gt;Actuator的使用方法&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -522,7 +522,7 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
     &lt;/span&gt;&lt;/p&gt;
 &lt;h3&gt;连接actuator的远程shell&lt;/h3&gt;
 &lt;p&gt;加入remote shell的起步依赖以后：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;ssh user@localhost -p 2000
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ssh&lt;/span&gt; user@localhost -p &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt;
 Password authentication 
 Password:&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;可使用一下命令：&lt;/p&gt;
@@ -531,7 +531,7 @@ beans
 endpoint
 metrics&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;可以使用&lt;code class=&quot;language-text&quot;&gt;endpoint list&lt;/code&gt;来获取所有可用端点。如果要调用，比如&lt;code class=&quot;language-text&quot;&gt;health&lt;/code&gt;端点，可使用：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;spring invoke health&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;spring invoke health&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;重命名端点&lt;/h3&gt;
 &lt;p&gt;在&lt;code class=&quot;language-text&quot;&gt;application.yml&lt;/code&gt;中：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;endpoints&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
@@ -560,7 +560,7 @@ http
 &lt;h2&gt;部署Spring Boot应用程序&lt;/h2&gt;
 &lt;h3&gt;打包为uber jar&lt;/h3&gt;
 &lt;p&gt;使用maven的话，我们直接在命令行运行：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;mvn package&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mvn package&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;spring会将我们的应用程序打包为一个jar包并放置在/target目录下。&lt;/p&gt;
 &lt;p&gt;如果要生成war文件，则我们需要在&lt;code class=&quot;language-text&quot;&gt;pom.xml&lt;/code&gt;中加入：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;&lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;packaging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;war&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;packaging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -621,13 +621,13 @@ http
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;最终运行的结果是什么呢？&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;init InitTester
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;init InitTester
 After defining base
 init Base
 After creating an object of Base
-a=1
+&lt;span class=&quot;token assign-left variable&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
 init Sub
-b=1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;还有一点需要注意的是，通常情况下，当用户访问一个类的static变量时，类就会被jvm初始化。但是当用户访问final变量时，如果再编译时可被计算，那当前类并不会被初始化。举个例子：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Tester&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 
@@ -643,7 +643,7 @@ b=1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;出现的结果是：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;加载器的父子关系&lt;/h3&gt;
 &lt;p&gt;根类加载器&amp;#x3C;-扩展类加载器&amp;#x3C;-系统类加载器&amp;#x3C;-用户自定义加载器&lt;/p&gt;
 &lt;h3&gt;父亲委托机制的优点&lt;/h3&gt;
@@ -723,7 +723,7 @@ b=1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;使用Spring Boot CLI：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;spring run HelloController.groovy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;spring run HelloController.groovy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;SpringBootApplication&lt;/h2&gt;
 &lt;p&gt;使用Spring Initializr，我们可以在很短的时间内创建一个Spring Boot Application。在项目根目录下的/src/main/java的主程序引导类之前，我们需要加入&lt;code class=&quot;language-text&quot;&gt;@SpringBootApplication&lt;/code&gt;从而使用Spring Boot的众多功能。单单的这一行代码其实开启了Spring Boot的三个功能：&lt;/p&gt;
 &lt;ol&gt;
@@ -1154,7 +1154,7 @@ Entity&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Entity
 Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[LeetCode 55: Jump Game]]></title><description><![CDATA[我一看这题目标题就知道是一道dp（捂脸）。。。所有的dp问题都可以先想出一个recursion解法，然后再化成iterative的dp就可以了。 如果是单纯的recursion的话， 我们从index 0开始，对从目前这个点开始的可以达到的任何一个index…]]></description><link>http://oddguan.io/leetcode55/</link><guid isPermaLink="false">http://oddguan.io/leetcode55/</guid><pubDate>Sat, 04 May 2019 20:53:41 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1227,7 +1227,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
 &lt;p&gt;有的时候其实不要太局限于自己对题目的第一印象。这道题我就是有一个先入为主的思想，感觉这题一定是用dp做，导致自己并没有能跳出这个思维定式，从而并没有想出最优解。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[LeetCode 46: Permutations]]></title><description><![CDATA[有好几天没有更新了，因为这两天考完Econ放松了一下再加上身体有点不舒服就没怎么做题。我们先来看一下题目描述：  和之前做过的一道Next Permutation有一点相似（回想起被支配的恐惧）。我这里的第一反应是以为这道题很简单。。采用dfs…]]></description><link>http://oddguan.io/leetcode46/</link><guid isPermaLink="false">http://oddguan.io/leetcode46/</guid><pubDate>Fri, 03 May 2019 04:40:06 GMT</pubDate><content:encoded>&lt;p&gt;有好几天没有更新了，因为这两天考完Econ放松了一下再加上身体有点不舒服就没怎么做题。我们先来看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 492px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 492px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1317,7 +1317,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
 &lt;p&gt;虽然又是一道搜索题目，自己也只想出了一个brute force并没有能优化，但是看答案还是学习到了不少。这一篇就当做是答案赏析吧，希望自己有朝一日也能轻松写出这么简洁又有效的代码。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[LeetCode 33 & 153: Search in Rotated Sorted Array / Find Minimum in Rotated Sorted Array]]></title><description><![CDATA[153算是一个33的弱化版。我们先来看一下15…]]></description><link>http://oddguan.io/leetcode33/</link><guid isPermaLink="false">http://oddguan.io/leetcode33/</guid><pubDate>Sat, 27 Apr 2019 21:01:14 GMT</pubDate><content:encoded>&lt;p&gt;153算是一个33的弱化版。我们先来看一下153的题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 508px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 508px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1379,7 +1379,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
 &lt;p&gt;除了iterative的方法之外，我们还可以用recursive的方法来解决这个问题。在确认整体数组是否有序这个边界条件之后，我们还是先找到数组的中点然后确认左右两边是否排序，然后找未排序一边的最小值即可。已排序过的一边我们不需要找最小值，因为我们可以确认最小值一定在未排序的一边。有这个思路以后我们的代码其实就很简单明了了。这里引用一下花花对这道题的讲义截图，应该能帮助理解recursive的解法：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1434,7 +1434,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
 &lt;p&gt;看完了153我们再来看33。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 508px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 508px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1534,7 +1534,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[LeetCode 146: LRU Cache]]></title><description><![CDATA[我们先来看一下题目描述：  学过计算机系统的同学应该都对LRU Cache不陌生，其实他就是一种数据结构来用有限的空间存储最近被使用的key value pairs，并达到constant time的get和put。 假设我们LRU Cache的capacity为…]]></description><link>http://oddguan.io/leetcode146/</link><guid isPermaLink="false">http://oddguan.io/leetcode146/</guid><pubDate>Wed, 24 Apr 2019 04:28:25 GMT</pubDate><content:encoded>&lt;p&gt;我们先来看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 510px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 510px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1616,7 +1616,7 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
 我们在put时需要达到&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的时间复杂度，那么我们在删除最后的key value pairs是也需要达到&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。如果我们只存储value，在对hash table做删除操作时就不能达到&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;了。这个一开始对于我来说还是挺难理解的。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[LeetCode 31: Next Permutation]]></title><description><![CDATA[看题目描述之前先来观赏一下我的提交记录。。。。。。  最后实在是处理不懂edge cases了所以看了答案。真的是崩溃。疯狂下拉这个号的正确率。。。 我们来看一下题目描述：  在C++中有一个builtin就叫next_permutation…]]></description><link>http://oddguan.io/leetcode31/</link><guid isPermaLink="false">http://oddguan.io/leetcode31/</guid><pubDate>Mon, 22 Apr 2019 22:16:56 GMT</pubDate><content:encoded>&lt;p&gt;看题目描述之前先来观赏一下我的提交记录。。。。。。&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1649,7 +1649,7 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
 &lt;p&gt;我们来看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1701,7 +1701,7 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
 &lt;p&gt;我们先来看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1771,7 +1771,7 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
 &lt;p&gt;想明白以后我们提交答案：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1838,7 +1838,7 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
 &lt;p&gt;提交以后的runtime和space如下：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1871,7 +1871,7 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
 如果我们给定两个sorted list，那么我们只需要两个pointers指向每一个list的头，然后依次将小的那一个node…]]></description><link>http://oddguan.io/leetcode23/</link><guid isPermaLink="false">http://oddguan.io/leetcode23/</guid><pubDate>Fri, 19 Apr 2019 22:46:18 GMT</pubDate><content:encoded>&lt;p&gt;国际惯例，让我们先来看一下题目：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 520px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 520px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1975,15 +1975,15 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
 &lt;h3&gt;Hello World!&lt;/h3&gt;
 &lt;p&gt;所以C++的hello world程序是长成什么样子的？我们创建一个名为&lt;code class=&quot;language-text&quot;&gt;hello&lt;/code&gt;的文件夹，在内新建一个&lt;code class=&quot;language-text&quot;&gt;.cpp&lt;/code&gt;的文件
 命名为&lt;code class=&quot;language-text&quot;&gt;helloworld.cpp&lt;/code&gt;。然后在文件内输入：&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c++&quot;&gt;&lt;pre class=&quot;language-c++&quot;&gt;&lt;code class=&quot;language-c++&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;iostream&gt;&lt;/span&gt;&lt;/span&gt;
 
-int main()
-{
-    std::cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; std::endl; // print hello world
-    std::cin.get(); // get a standard input and terminate the program
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;cout &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;endl&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// print hello world&lt;/span&gt;
+    std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;cin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// get a standard input and terminate the program&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;打开terminal，输入&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;g++ helloworld.cpp -o helloworld &amp;amp;&amp;amp; ./helloworld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;g++ helloworld.cpp -o helloworld &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./helloworld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;在terminal中就会出现&lt;code class=&quot;language-text&quot;&gt;Hello World!&lt;/code&gt;,并在敲任意键后退出程序。&lt;/p&gt;
 &lt;h3&gt;一些实用技巧&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -1995,7 +1995,7 @@ int main()
 &lt;p&gt;这是我最近做的两道很经典的DFS题目。我们先来看一下第17题的题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2112,7 +2112,7 @@ int main()
 &lt;p&gt;题目描述如下：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2188,7 +2188,7 @@ C++中的实现：&lt;/p&gt;
 大家都知道2Sum…]]></description><link>http://oddguan.io/leetcode15/</link><guid isPermaLink="false">http://oddguan.io/leetcode15/</guid><pubDate>Sun, 14 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一道被Leetcode标为Medium的题目，让我们先来看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2280,7 +2280,7 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
 &lt;p&gt;国际惯例，我们先来看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2408,7 +2408,7 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
 我们还是先来一起看一下题目描述：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2487,7 +2487,7 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
 指向第三个node，交换前两个，再从第三个node…]]></description><link>http://oddguan.io/leetcode24/</link><guid isPermaLink="false">http://oddguan.io/leetcode24/</guid><pubDate>Wed, 10 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一道leetcode中等难度的题目。题目描述如下：&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
