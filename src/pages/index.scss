@@ -70,6 +70,13 @@
     justify-content: space-around;
     min-width: 60%;
     max-width: 80%;
+    a {
+      color: inherit;
+      transition: color 0.15s;
+      &:hover {
+        color: lighten(#222, 10%);
+      }
+    }
   }
 }
 

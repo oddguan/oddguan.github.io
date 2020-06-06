@@ -20,7 +20,6 @@
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-feed": "^2.3.16",
-    "gatsby-plugin-google-analytics": "^2.1.21",
     "gatsby-plugin-manifest": "^2.2.21",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.11",

@@ -1,6 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
-import Typed from 'typed.js';
+import { Link, graphql } from "gatsby";
+import Typed from "typed.js";
 import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,12 +11,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import "./index.scss";
-import Drawer from '../components/drawer';
+import Drawer from "../components/drawer";
 
 class PageIndex extends React.Component {
   componentDidMount() {
-      new Typed("#typer", {
-        strings: [`
+    new Typed("#typer", {
+      strings: [
+        `
         <span class="highlight-const">const</span> 
           <span class="highlight-variable">description</span> <span class="highlight-equalsign">=</span> {<br> 
           &nbsp;&nbsp;<span class="highlight-key">name</span>: <span class="highlight-string">"Chenxiao Guan"</span>,<br>
@@ -24,10 +25,10 @@ class PageIndex extends React.Component {
           &nbsp;&nbsp;<span class="highlight-key">interestedIn</span>: [<span class="highlight-string">"Web Development"</span>, <span class="highlight-string">"DevOps"</span>, <span class="highlight-string">"Digital Privacy"</span>],<br>
           &nbsp;&nbsp;<span class="highlight-key">favoriteLanguage</span>: <span class="highlight-string">"JavaScript"</span>,<br>
           &nbsp;&nbsp;<span class="highlight-key">frameworkOfChoice</span>: <span class="highlight-string">"React"</span>,<br>
-        };`
+        };`,
       ],
-        typeSpeed: 30,
-      });
+      typeSpeed: 30,
+    });
   }
 
   render() {
@@ -55,17 +56,25 @@ class PageIndex extends React.Component {
             </div>
             <div className="personal-card-bottom">
               <div className="socialmedia-icons">
-                <FontAwesomeIcon size="lg" icon={faTwitter} />
-                <FontAwesomeIcon size="lg" icon={faInstagram} />
-                <FontAwesomeIcon size="lg" icon={faGithub} />
-                <FontAwesomeIcon size="lg" icon={faLinkedin} />
+                <a target="_blank" href="https://twitter.com/tismy97">
+                  <FontAwesomeIcon size="lg" icon={faTwitter} />
+                </a>
+                <a target="_blank" href="https://instagram.com/oddguan">
+                  <FontAwesomeIcon size="lg" icon={faInstagram} />
+                </a>
+                <a target="_blank" href="https://github.com/oddguan">
+                  <FontAwesomeIcon size="lg" icon={faGithub} />
+                </a>
+                <a target="_blank" href="https://linkedin.com/in/chenxiao-guan">
+                  <FontAwesomeIcon size="lg" icon={faLinkedin} />
+                </a>
               </div>
             </div>
           </div>
           <div className="self-intro">
             <div className="paragraphs">
               <h1>Hello There!</h1>
-              <h2>Welcome to my space on the world wide web.</h2>
+              <h2>Welcome to my space on the World Wide Web.</h2>
               <div className="codeblock-wrapper"></div>
               <div id="typer" />
             </div>
