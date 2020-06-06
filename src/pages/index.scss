@@ -9,21 +9,19 @@
 .landing-right {
   color: #222;
   width: 40vw;
-  background-color: #98C398;
+  background-color: #98c398;
   height: 100vh;
 }
 
 .personal-card {
   color: #222;
-  position: fixed;
   display: flex;
+  flex: 3;
   flex-direction: column;
   background-color: #e2f3e2;
-  left: 50vw;
-  top: 10vh;
   width: 400px;
   height: 600px;
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.15);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
   h2 {
     color: #222;
     margin: 0;
@@ -33,7 +31,7 @@
 .personal-card-main {
   flex: 4;
   display: flex;
-  margin-top: 10px;
+  margin: 3em 0;
   justify-content: center;
 }
 
@@ -42,23 +40,93 @@
 }
 
 .personal-card-title {
-  flex: 3;
+  flex: 2;
   text-align: center;
+  h4 {
+    margin: 1em;
+    color: #222;
+  }
 }
 
 .personal-card-name {
-  flex: 5;
+  flex: 3;
   text-align: center;
   vertical-align: middle;
+  h2 {
+    font-size: 2em;
+  }
 }
 
 .personal-card-bottom {
   flex: 1;
   background-color: #e5c07b;
   max-height: 50px;
+  display: flex;
+  .socialmedia-icons {
+    display: flex;
+    margin: auto;
+    top: 50%;
+    justify-content: space-around;
+    min-width: 60%;
+    max-width: 80%;
+  }
 }
 
 .separate {
-  width: 40px;
+  width: 60px;
   display: inline-block;
+  border-top: 3px solid #61afef;
+}
+
+.self-intro {
+  flex: 7;
+  text-align: right;
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+}
+
+.main-content {
+  position: fixed;
+  top: 10vh;
+  display: flex;
+  max-width: 60%;
+  left: 15%;
+}
+
+.paragraphs {
+  float: right;
+  max-width: 50%;
+  margin-right: 3em;
+  p {
+    margin-top: 1em;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  button {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2em;
+    padding: 0 1.5em;
+    font-weight: 500;
+    background-image: none;
+    border: 1px solid #222;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: rgba(29, 111, 197, 0.5);
+    color: #eee;
+    border-radius: 1.75em;
+    &:hover {
+      background-color: lighten(rgba(29, 111, 197, 0.5), 10%);
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
 }
