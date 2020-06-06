@@ -26,38 +26,30 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-0426e8aba9dbd294a1da.js"
+    "url": "webpack-runtime-f87f613bab72d8985b72.js"
   },
   {
-    "url": "styles.347e516056f2c25d3a92.css"
+    "url": "styles.3b7aca2566beb74221ac.css"
   },
   {
     "url": "styles-4f0134e7470500027f0c.js"
   },
   {
-    "url": "commons-e9ce79a6c8e21757ed1d.js"
+    "url": "commons-61215f2708166d98cc3f.js"
   },
   {
-    "url": "app-461540a29bcb69ec733d.js"
+    "url": "app-316efb6ec47604b19d29.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-ebda79b2f242b4f85f83.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "28c93dffedbf0dfc3c534589731f5aa7"
-  },
-  {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "c355c8040c47a63bfb3360e4b7cb6553"
-  },
-  {
-    "url": "page-data/app-data.json",
-    "revision": "9f483ee6a9de6c152a6b4eb4cb1d6e4e"
+    "revision": "db97a1fca48020c1b3c0a08ed8f5f8c6"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "74d6b77d3a18d4d2a732ce41da91de17"
+    "revision": "d774b0e46396d54cfaa7c4bfe61e5db8"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -76,12 +68,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/oddguan.io`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/oddguan.io/app-461540a29bcb69ec733d.js`))) {
+  if (!resources || !(await caches.match(`/app-316efb6ec47604b19d29.js`))) {
     return await fetch(event.request)
   }
 
@@ -94,7 +86,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/oddguan.io/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 

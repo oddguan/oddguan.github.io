@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chenxiao's Blog]]></title><description><![CDATA[This is a technical blog]]></description><link>http://oddguan.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Jun 2020 23:34:29 GMT</lastBuildDate><item><title><![CDATA[A Quick Setup for Express (Node.js), TypeScript, Travis CI, and Azure]]></title><link>http://oddguan.io/express-typescript-azure/</link><guid isPermaLink="false">http://oddguan.io/express-typescript-azure/</guid><pubDate>Mon, 27 Jan 2020 15:42:49 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Implementation of quick sort and partial sort in C++]]></title><description><![CDATA[做了很多道题都用到了quick select的概念。例如215:Kth Largest Element in an Array。
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chenxiao's Blog]]></title><description><![CDATA[This is a technical blog]]></description><link>http://oddguan.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Jun 2020 03:36:52 GMT</lastBuildDate><item><title><![CDATA[A Quick Setup for Express (Node.js), TypeScript, Travis CI, and Azure]]></title><link>http://oddguan.io/express-typescript-azure/</link><guid isPermaLink="false">http://oddguan.io/express-typescript-azure/</guid><pubDate>Mon, 27 Jan 2020 15:42:49 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Implementation of quick sort and partial sort in C++]]></title><description><![CDATA[做了很多道题都用到了quick select的概念。例如215:Kth Largest Element in an Array。
 快排和快选都用到了的概念，即iteratively将array根据其中的一个pivot分割成两部分，使得前半部分小于pivot而后半部分大于pivot…]]></description><link>http://oddguan.io/quicksort/</link><guid isPermaLink="false">http://oddguan.io/quicksort/</guid><pubDate>Fri, 06 Dec 2019 06:19:48 GMT</pubDate><content:encoded>&lt;p&gt;做了很多道题都用到了quick select的概念。例如215:Kth Largest Element in an Array。
 快排和快选都用到了&lt;code class=&quot;language-text&quot;&gt;partition&lt;/code&gt;的概念，即iteratively将array根据其中的一个pivot分割成两部分，使得前半部分小于pivot而后半部分大于pivot。两个算法唯一的区别在于，quick sort在每次partition结束后需要recursively对array的两个部分都要进行继续quick sort，而quick select只需要根据结束后pivot的位置来断定继续想做recursively sort还是向右recursively sort即可。因此，我们假设input array的长度为N，quick select的index为K，则quick sort的amortized runtime为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(NlogN)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10903em;&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10903em;&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,而quick select的runtime为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(NlogK)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10903em;&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.07153em;&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
 &lt;p&gt;写一下快排(quick sort)和快选(quick select)在C++中的实现：&lt;/p&gt;
@@ -156,7 +156,7 @@ reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…&lt;/p&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;runtime 76%，memory 23%。很明显我们在空间复杂度上有优化空间。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Chenxiao Guan Resume - Software Engineer]]></title><description><![CDATA[This is my resume:
 Chenxiao Resume]]></description><link>http://oddguan.io/resume/</link><guid isPermaLink="false">http://oddguan.io/resume/</guid><pubDate>Mon, 02 Sep 2019 23:52:06 GMT</pubDate><content:encoded>&lt;p&gt;This is my resume:
-&lt;a href=&quot;/oddguan.io/fdf3d598930b608e92113aee8fc0d67f/ChenxiaoGuanResume.pdf&quot;&gt;Chenxiao Resume&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[leetcode 105 & 106: Construct Binary Tree from Preorder, Postorder and Inorder Traversal]]></title><description><![CDATA[105的题目为：reconstruct the binary tree from Preorder and Inorder traversal of the tree. 106题目为：reconstruct the binary tree from Postorder and…]]></description><link>http://oddguan.io/leetcode106/</link><guid isPermaLink="false">http://oddguan.io/leetcode106/</guid><pubDate>Tue, 20 Aug 2019 04:20:34 GMT</pubDate><content:encoded>&lt;p&gt;105的题目为：reconstruct the binary tree from &lt;em&gt;Preorder&lt;/em&gt; and &lt;em&gt;Inorder&lt;/em&gt; traversal of the tree.&lt;/p&gt;
+&lt;a href=&quot;/fdf3d598930b608e92113aee8fc0d67f/ChenxiaoGuanResume.pdf&quot;&gt;Chenxiao Resume&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[leetcode 105 & 106: Construct Binary Tree from Preorder, Postorder and Inorder Traversal]]></title><description><![CDATA[105的题目为：reconstruct the binary tree from Preorder and Inorder traversal of the tree. 106题目为：reconstruct the binary tree from Postorder and…]]></description><link>http://oddguan.io/leetcode106/</link><guid isPermaLink="false">http://oddguan.io/leetcode106/</guid><pubDate>Tue, 20 Aug 2019 04:20:34 GMT</pubDate><content:encoded>&lt;p&gt;105的题目为：reconstruct the binary tree from &lt;em&gt;Preorder&lt;/em&gt; and &lt;em&gt;Inorder&lt;/em&gt; traversal of the tree.&lt;/p&gt;
 &lt;p&gt;106题目为：reconstruct the binary tree from &lt;em&gt;Postorder&lt;/em&gt; and &lt;em&gt;Inorder&lt;/em&gt; traversal of the tree.&lt;/p&gt;
 &lt;p&gt;两道题基本上是一样的。先来看一下代码实现：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// leetcode 105 inorder and preorder&lt;/span&gt;
@@ -252,7 +252,7 @@ inorder = [9,3,15,20,7]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/bd1b001a83eaf9c31e349bb871e1d09a/fa2f5/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/bd1b001a83eaf9c31e349bb871e1d09a/fa2f5/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -265,10 +265,10 @@ inorder = [9,3,15,20,7]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/bd1b001a83eaf9c31e349bb871e1d09a/fa2f5/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/bd1b001a83eaf9c31e349bb871e1d09a/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/bd1b001a83eaf9c31e349bb871e1d09a/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/bd1b001a83eaf9c31e349bb871e1d09a/fa2f5/%E6%8F%8F%E8%BF%B0.png 517w&quot;
+        src=&quot;/static/bd1b001a83eaf9c31e349bb871e1d09a/fa2f5/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/bd1b001a83eaf9c31e349bb871e1d09a/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/bd1b001a83eaf9c31e349bb871e1d09a/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/bd1b001a83eaf9c31e349bb871e1d09a/fa2f5/%E6%8F%8F%E8%BF%B0.png 517w&quot;
         sizes=&quot;(max-width: 517px) 100vw, 517px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -495,7 +495,7 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/58213/actuator.png&quot;
+    href=&quot;/static/070b6649cb5be9158b29cca517eee0eb/58213/actuator.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -508,12 +508,12 @@ of the substring, and the second one being the &lt;strong&gt;length&lt;/strong&g
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Actuator端点&quot;
         title=&quot;Actuator端点&quot;
-        src=&quot;/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/fcda8/actuator.png&quot;
-        srcset=&quot;/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/12f09/actuator.png 148w,
-/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/e4a3f/actuator.png 295w,
-/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/fcda8/actuator.png 590w,
-/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/efc66/actuator.png 885w,
-/oddguan.io/static/070b6649cb5be9158b29cca517eee0eb/58213/actuator.png 902w&quot;
+        src=&quot;/static/070b6649cb5be9158b29cca517eee0eb/fcda8/actuator.png&quot;
+        srcset=&quot;/static/070b6649cb5be9158b29cca517eee0eb/12f09/actuator.png 148w,
+/static/070b6649cb5be9158b29cca517eee0eb/e4a3f/actuator.png 295w,
+/static/070b6649cb5be9158b29cca517eee0eb/fcda8/actuator.png 590w,
+/static/070b6649cb5be9158b29cca517eee0eb/efc66/actuator.png 885w,
+/static/070b6649cb5be9158b29cca517eee0eb/58213/actuator.png 902w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1158,7 +1158,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/0b6f4/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/06de4be6b8e66c2c5e273b9f1bc58f47/0b6f4/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1171,12 +1171,12 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/06de4be6b8e66c2c5e273b9f1bc58f47/0b6f4/%E6%8F%8F%E8%BF%B0.png 984w&quot;
+        src=&quot;/static/06de4be6b8e66c2c5e273b9f1bc58f47/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/06de4be6b8e66c2c5e273b9f1bc58f47/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/06de4be6b8e66c2c5e273b9f1bc58f47/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/06de4be6b8e66c2c5e273b9f1bc58f47/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/06de4be6b8e66c2c5e273b9f1bc58f47/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
+/static/06de4be6b8e66c2c5e273b9f1bc58f47/0b6f4/%E6%8F%8F%E8%BF%B0.png 984w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1231,7 +1231,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/4c637d6b4642506583580560e610c33d/5c6e9/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/4c637d6b4642506583580560e610c33d/5c6e9/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1244,10 +1244,10 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/4c637d6b4642506583580560e610c33d/5c6e9/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/4c637d6b4642506583580560e610c33d/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/4c637d6b4642506583580560e610c33d/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/4c637d6b4642506583580560e610c33d/5c6e9/%E6%8F%8F%E8%BF%B0.png 492w&quot;
+        src=&quot;/static/4c637d6b4642506583580560e610c33d/5c6e9/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/4c637d6b4642506583580560e610c33d/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/4c637d6b4642506583580560e610c33d/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/4c637d6b4642506583580560e610c33d/5c6e9/%E6%8F%8F%E8%BF%B0.png 492w&quot;
         sizes=&quot;(max-width: 492px) 100vw, 492px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1321,7 +1321,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/47ffa6327ca1f3dacd09ebcd8bae2e90/2fd48/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/47ffa6327ca1f3dacd09ebcd8bae2e90/2fd48/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1334,10 +1334,10 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述.png&quot;
         title=&quot;描述.png&quot;
-        src=&quot;/oddguan.io/static/47ffa6327ca1f3dacd09ebcd8bae2e90/2fd48/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/47ffa6327ca1f3dacd09ebcd8bae2e90/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/47ffa6327ca1f3dacd09ebcd8bae2e90/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/47ffa6327ca1f3dacd09ebcd8bae2e90/2fd48/%E6%8F%8F%E8%BF%B0.png 508w&quot;
+        src=&quot;/static/47ffa6327ca1f3dacd09ebcd8bae2e90/2fd48/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/47ffa6327ca1f3dacd09ebcd8bae2e90/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/47ffa6327ca1f3dacd09ebcd8bae2e90/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/47ffa6327ca1f3dacd09ebcd8bae2e90/2fd48/%E6%8F%8F%E8%BF%B0.png 508w&quot;
         sizes=&quot;(max-width: 508px) 100vw, 508px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1383,7 +1383,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/d9199/huahuajiangyi.png&quot;
+    href=&quot;/static/efd87bb0891499d48b93915987b74f1e/d9199/huahuajiangyi.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1396,12 +1396,12 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;huahuajiangyi&quot;
         title=&quot;huahuajiangyi&quot;
-        src=&quot;/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/fcda8/huahuajiangyi.png&quot;
-        srcset=&quot;/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/12f09/huahuajiangyi.png 148w,
-/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/e4a3f/huahuajiangyi.png 295w,
-/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/fcda8/huahuajiangyi.png 590w,
-/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/efc66/huahuajiangyi.png 885w,
-/oddguan.io/static/efd87bb0891499d48b93915987b74f1e/d9199/huahuajiangyi.png 960w&quot;
+        src=&quot;/static/efd87bb0891499d48b93915987b74f1e/fcda8/huahuajiangyi.png&quot;
+        srcset=&quot;/static/efd87bb0891499d48b93915987b74f1e/12f09/huahuajiangyi.png 148w,
+/static/efd87bb0891499d48b93915987b74f1e/e4a3f/huahuajiangyi.png 295w,
+/static/efd87bb0891499d48b93915987b74f1e/fcda8/huahuajiangyi.png 590w,
+/static/efd87bb0891499d48b93915987b74f1e/efc66/huahuajiangyi.png 885w,
+/static/efd87bb0891499d48b93915987b74f1e/d9199/huahuajiangyi.png 960w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1438,7 +1438,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/a47cd9e24f3783d27333b210ddd90aec/2fd48/%E6%8F%8F%E8%BF%B02.png&quot;
+    href=&quot;/static/a47cd9e24f3783d27333b210ddd90aec/2fd48/%E6%8F%8F%E8%BF%B02.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1451,10 +1451,10 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述2&quot;
         title=&quot;描述2&quot;
-        src=&quot;/oddguan.io/static/a47cd9e24f3783d27333b210ddd90aec/2fd48/%E6%8F%8F%E8%BF%B02.png&quot;
-        srcset=&quot;/oddguan.io/static/a47cd9e24f3783d27333b210ddd90aec/12f09/%E6%8F%8F%E8%BF%B02.png 148w,
-/oddguan.io/static/a47cd9e24f3783d27333b210ddd90aec/e4a3f/%E6%8F%8F%E8%BF%B02.png 295w,
-/oddguan.io/static/a47cd9e24f3783d27333b210ddd90aec/2fd48/%E6%8F%8F%E8%BF%B02.png 508w&quot;
+        src=&quot;/static/a47cd9e24f3783d27333b210ddd90aec/2fd48/%E6%8F%8F%E8%BF%B02.png&quot;
+        srcset=&quot;/static/a47cd9e24f3783d27333b210ddd90aec/12f09/%E6%8F%8F%E8%BF%B02.png 148w,
+/static/a47cd9e24f3783d27333b210ddd90aec/e4a3f/%E6%8F%8F%E8%BF%B02.png 295w,
+/static/a47cd9e24f3783d27333b210ddd90aec/2fd48/%E6%8F%8F%E8%BF%B02.png 508w&quot;
         sizes=&quot;(max-width: 508px) 100vw, 508px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1538,7 +1538,7 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/ee8b7141f80f9d64ca8038a09c572967/0abdd/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/ee8b7141f80f9d64ca8038a09c572967/0abdd/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1551,10 +1551,10 @@ Chenxiao&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><tit
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/ee8b7141f80f9d64ca8038a09c572967/0abdd/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/ee8b7141f80f9d64ca8038a09c572967/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/ee8b7141f80f9d64ca8038a09c572967/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/ee8b7141f80f9d64ca8038a09c572967/0abdd/%E6%8F%8F%E8%BF%B0.png 510w&quot;
+        src=&quot;/static/ee8b7141f80f9d64ca8038a09c572967/0abdd/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/ee8b7141f80f9d64ca8038a09c572967/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/ee8b7141f80f9d64ca8038a09c572967/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/ee8b7141f80f9d64ca8038a09c572967/0abdd/%E6%8F%8F%E8%BF%B0.png 510w&quot;
         sizes=&quot;(max-width: 510px) 100vw, 510px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1620,7 +1620,7 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/2bef9/record.png&quot;
+    href=&quot;/static/3390d5bfd7e70db568afbc213055f960/2bef9/record.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1633,12 +1633,12 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;record&quot;
         title=&quot;record&quot;
-        src=&quot;/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/fcda8/record.png&quot;
-        srcset=&quot;/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/12f09/record.png 148w,
-/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/e4a3f/record.png 295w,
-/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/fcda8/record.png 590w,
-/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/efc66/record.png 885w,
-/oddguan.io/static/3390d5bfd7e70db568afbc213055f960/2bef9/record.png 1024w&quot;
+        src=&quot;/static/3390d5bfd7e70db568afbc213055f960/fcda8/record.png&quot;
+        srcset=&quot;/static/3390d5bfd7e70db568afbc213055f960/12f09/record.png 148w,
+/static/3390d5bfd7e70db568afbc213055f960/e4a3f/record.png 295w,
+/static/3390d5bfd7e70db568afbc213055f960/fcda8/record.png 590w,
+/static/3390d5bfd7e70db568afbc213055f960/efc66/record.png 885w,
+/static/3390d5bfd7e70db568afbc213055f960/2bef9/record.png 1024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1653,7 +1653,7 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/84a90/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/c815c8eb7cea836e5543baeaa205dda1/84a90/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1666,12 +1666,12 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/c815c8eb7cea836e5543baeaa205dda1/84a90/%E6%8F%8F%E8%BF%B0.png 982w&quot;
+        src=&quot;/static/c815c8eb7cea836e5543baeaa205dda1/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/c815c8eb7cea836e5543baeaa205dda1/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/c815c8eb7cea836e5543baeaa205dda1/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/c815c8eb7cea836e5543baeaa205dda1/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/c815c8eb7cea836e5543baeaa205dda1/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
+/static/c815c8eb7cea836e5543baeaa205dda1/84a90/%E6%8F%8F%E8%BF%B0.png 982w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1705,7 +1705,7 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/f4281/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/1eea2583bb3cbbc242bf67f0e0f7cae2/f4281/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1718,12 +1718,12 @@ cache最后的node，然后再把新的node加到cache的最前端即可。最�
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/1eea2583bb3cbbc242bf67f0e0f7cae2/f4281/%E6%8F%8F%E8%BF%B0.png 1016w&quot;
+        src=&quot;/static/1eea2583bb3cbbc242bf67f0e0f7cae2/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/1eea2583bb3cbbc242bf67f0e0f7cae2/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/1eea2583bb3cbbc242bf67f0e0f7cae2/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/1eea2583bb3cbbc242bf67f0e0f7cae2/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/1eea2583bb3cbbc242bf67f0e0f7cae2/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
+/static/1eea2583bb3cbbc242bf67f0e0f7cae2/f4281/%E6%8F%8F%E8%BF%B0.png 1016w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1775,7 +1775,7 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/f4281/iterative.png&quot;
+    href=&quot;/static/9084cbd95596a4b8e2c08590d54c3399/f4281/iterative.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1788,12 +1788,12 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;iterative&quot;
         title=&quot;iterative&quot;
-        src=&quot;/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/fcda8/iterative.png&quot;
-        srcset=&quot;/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/12f09/iterative.png 148w,
-/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/e4a3f/iterative.png 295w,
-/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/fcda8/iterative.png 590w,
-/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/efc66/iterative.png 885w,
-/oddguan.io/static/9084cbd95596a4b8e2c08590d54c3399/f4281/iterative.png 1016w&quot;
+        src=&quot;/static/9084cbd95596a4b8e2c08590d54c3399/fcda8/iterative.png&quot;
+        srcset=&quot;/static/9084cbd95596a4b8e2c08590d54c3399/12f09/iterative.png 148w,
+/static/9084cbd95596a4b8e2c08590d54c3399/e4a3f/iterative.png 295w,
+/static/9084cbd95596a4b8e2c08590d54c3399/fcda8/iterative.png 590w,
+/static/9084cbd95596a4b8e2c08590d54c3399/efc66/iterative.png 885w,
+/static/9084cbd95596a4b8e2c08590d54c3399/f4281/iterative.png 1016w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1842,7 +1842,7 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/f4281/recursive.png&quot;
+    href=&quot;/static/15c127cbb87289e00e7047ef85b590cb/f4281/recursive.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1855,12 +1855,12 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;recursive&quot;
         title=&quot;recursive&quot;
-        src=&quot;/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/fcda8/recursive.png&quot;
-        srcset=&quot;/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/12f09/recursive.png 148w,
-/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/e4a3f/recursive.png 295w,
-/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/fcda8/recursive.png 590w,
-/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/efc66/recursive.png 885w,
-/oddguan.io/static/15c127cbb87289e00e7047ef85b590cb/f4281/recursive.png 1016w&quot;
+        src=&quot;/static/15c127cbb87289e00e7047ef85b590cb/fcda8/recursive.png&quot;
+        srcset=&quot;/static/15c127cbb87289e00e7047ef85b590cb/12f09/recursive.png 148w,
+/static/15c127cbb87289e00e7047ef85b590cb/e4a3f/recursive.png 295w,
+/static/15c127cbb87289e00e7047ef85b590cb/fcda8/recursive.png 590w,
+/static/15c127cbb87289e00e7047ef85b590cb/efc66/recursive.png 885w,
+/static/15c127cbb87289e00e7047ef85b590cb/f4281/recursive.png 1016w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1875,7 +1875,7 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/0c8550fcbff283e47630d1f047e51090/69902/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/0c8550fcbff283e47630d1f047e51090/69902/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1888,10 +1888,10 @@ iterative的话，我们需要得到linkedlist的长度，然后对每k个节点
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述.png&quot;
         title=&quot;描述.png&quot;
-        src=&quot;/oddguan.io/static/0c8550fcbff283e47630d1f047e51090/69902/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/0c8550fcbff283e47630d1f047e51090/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/0c8550fcbff283e47630d1f047e51090/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/0c8550fcbff283e47630d1f047e51090/69902/%E6%8F%8F%E8%BF%B0.png 520w&quot;
+        src=&quot;/static/0c8550fcbff283e47630d1f047e51090/69902/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/0c8550fcbff283e47630d1f047e51090/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/0c8550fcbff283e47630d1f047e51090/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/0c8550fcbff283e47630d1f047e51090/69902/%E6%8F%8F%E8%BF%B0.png 520w&quot;
         sizes=&quot;(max-width: 520px) 100vw, 520px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1999,7 +1999,7 @@ int main()
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/350de/17%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/957a9e4bab93ad6578bceb9bca021f3d/350de/17%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -2012,12 +2012,12 @@ int main()
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;17描述&quot;
         title=&quot;17描述&quot;
-        src=&quot;/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/fcda8/17%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/12f09/17%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/e4a3f/17%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/fcda8/17%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/efc66/17%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/957a9e4bab93ad6578bceb9bca021f3d/350de/17%E6%8F%8F%E8%BF%B0.png 998w&quot;
+        src=&quot;/static/957a9e4bab93ad6578bceb9bca021f3d/fcda8/17%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/957a9e4bab93ad6578bceb9bca021f3d/12f09/17%E6%8F%8F%E8%BF%B0.png 148w,
+/static/957a9e4bab93ad6578bceb9bca021f3d/e4a3f/17%E6%8F%8F%E8%BF%B0.png 295w,
+/static/957a9e4bab93ad6578bceb9bca021f3d/fcda8/17%E6%8F%8F%E8%BF%B0.png 590w,
+/static/957a9e4bab93ad6578bceb9bca021f3d/efc66/17%E6%8F%8F%E8%BF%B0.png 885w,
+/static/957a9e4bab93ad6578bceb9bca021f3d/350de/17%E6%8F%8F%E8%BF%B0.png 998w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2116,7 +2116,7 @@ int main()
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/350de/22%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/7b1f3fe62bae4090765e7e4776311f09/350de/22%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -2129,12 +2129,12 @@ int main()
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;22描述&quot;
         title=&quot;22描述&quot;
-        src=&quot;/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/fcda8/22%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/12f09/22%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/e4a3f/22%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/fcda8/22%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/efc66/22%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/7b1f3fe62bae4090765e7e4776311f09/350de/22%E6%8F%8F%E8%BF%B0.png 998w&quot;
+        src=&quot;/static/7b1f3fe62bae4090765e7e4776311f09/fcda8/22%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/7b1f3fe62bae4090765e7e4776311f09/12f09/22%E6%8F%8F%E8%BF%B0.png 148w,
+/static/7b1f3fe62bae4090765e7e4776311f09/e4a3f/22%E6%8F%8F%E8%BF%B0.png 295w,
+/static/7b1f3fe62bae4090765e7e4776311f09/fcda8/22%E6%8F%8F%E8%BF%B0.png 590w,
+/static/7b1f3fe62bae4090765e7e4776311f09/efc66/22%E6%8F%8F%E8%BF%B0.png 885w,
+/static/7b1f3fe62bae4090765e7e4776311f09/350de/22%E6%8F%8F%E8%BF%B0.png 998w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2192,7 +2192,7 @@ C++中的实现：&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/5edb3585d1f81513bdf413cda0fb0608/87254/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/5edb3585d1f81513bdf413cda0fb0608/87254/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -2205,11 +2205,11 @@ C++中的实现：&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/5edb3585d1f81513bdf413cda0fb0608/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/5edb3585d1f81513bdf413cda0fb0608/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/5edb3585d1f81513bdf413cda0fb0608/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/5edb3585d1f81513bdf413cda0fb0608/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/5edb3585d1f81513bdf413cda0fb0608/87254/%E6%8F%8F%E8%BF%B0.png 604w&quot;
+        src=&quot;/static/5edb3585d1f81513bdf413cda0fb0608/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/5edb3585d1f81513bdf413cda0fb0608/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/5edb3585d1f81513bdf413cda0fb0608/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/5edb3585d1f81513bdf413cda0fb0608/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/5edb3585d1f81513bdf413cda0fb0608/87254/%E6%8F%8F%E8%BF%B0.png 604w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2284,7 +2284,7 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/d9c868738897e088e2e19d492a793d5f/0b5b1/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/d9c868738897e088e2e19d492a793d5f/0b5b1/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -2297,11 +2297,11 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/d9c868738897e088e2e19d492a793d5f/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/d9c868738897e088e2e19d492a793d5f/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/d9c868738897e088e2e19d492a793d5f/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/d9c868738897e088e2e19d492a793d5f/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/d9c868738897e088e2e19d492a793d5f/0b5b1/%E6%8F%8F%E8%BF%B0.png 593w&quot;
+        src=&quot;/static/d9c868738897e088e2e19d492a793d5f/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/d9c868738897e088e2e19d492a793d5f/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/d9c868738897e088e2e19d492a793d5f/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/d9c868738897e088e2e19d492a793d5f/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/d9c868738897e088e2e19d492a793d5f/0b5b1/%E6%8F%8F%E8%BF%B0.png 593w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2412,7 +2412,7 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/8cdda/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/68d8b7248e8e7477dcd20f0dbcfec811/8cdda/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -2425,12 +2425,12 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;描述&quot;
         title=&quot;描述&quot;
-        src=&quot;/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/68d8b7248e8e7477dcd20f0dbcfec811/8cdda/%E6%8F%8F%E8%BF%B0.png 1168w&quot;
+        src=&quot;/static/68d8b7248e8e7477dcd20f0dbcfec811/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/68d8b7248e8e7477dcd20f0dbcfec811/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/68d8b7248e8e7477dcd20f0dbcfec811/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/68d8b7248e8e7477dcd20f0dbcfec811/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/68d8b7248e8e7477dcd20f0dbcfec811/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
+/static/68d8b7248e8e7477dcd20f0dbcfec811/8cdda/%E6%8F%8F%E8%BF%B0.png 1168w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2491,7 +2491,7 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/d56e1/%E6%8F%8F%E8%BF%B0.png&quot;
+    href=&quot;/static/7c9e5076168fd44dbb0bc3d3a76a7696/d56e1/%E6%8F%8F%E8%BF%B0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -2504,12 +2504,12 @@ corner case就是4和9这种需要加前缀的罗马数字需要区分考虑就�
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;题目描述&quot;
         title=&quot;题目描述&quot;
-        src=&quot;/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
-        srcset=&quot;/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
-/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
-/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
-/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
-/oddguan.io/static/7c9e5076168fd44dbb0bc3d3a76a7696/d56e1/%E6%8F%8F%E8%BF%B0.png 1130w&quot;
+        src=&quot;/static/7c9e5076168fd44dbb0bc3d3a76a7696/fcda8/%E6%8F%8F%E8%BF%B0.png&quot;
+        srcset=&quot;/static/7c9e5076168fd44dbb0bc3d3a76a7696/12f09/%E6%8F%8F%E8%BF%B0.png 148w,
+/static/7c9e5076168fd44dbb0bc3d3a76a7696/e4a3f/%E6%8F%8F%E8%BF%B0.png 295w,
+/static/7c9e5076168fd44dbb0bc3d3a76a7696/fcda8/%E6%8F%8F%E8%BF%B0.png 590w,
+/static/7c9e5076168fd44dbb0bc3d3a76a7696/efc66/%E6%8F%8F%E8%BF%B0.png 885w,
+/static/7c9e5076168fd44dbb0bc3d3a76a7696/d56e1/%E6%8F%8F%E8%BF%B0.png 1130w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
