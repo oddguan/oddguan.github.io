@@ -1,0 +1,20 @@
+name: Pulish to Github Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 13
+          registry-url: https://registry.npmjs.org
+      - name: install dependencies
+        run: npm install
+      - name: run deploy script
+        run: npm run deploy
