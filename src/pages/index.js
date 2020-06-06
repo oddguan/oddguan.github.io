@@ -43,7 +43,7 @@ export const pageQuery = graphql`
   query {
     file(absolutePath: { regex: "/icon_squared.jpg/" }) {
       childImageSharp {
-        fixed(width: 175, height: 175) {
+        fixed(width: 175, height: 175, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
