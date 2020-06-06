@@ -3,13 +3,13 @@
 }
 
 .landing-left {
-  width: 60vw;
+  width: 30vw;
+  background-color: #98c398;
 }
 
 .landing-right {
   color: #222;
-  width: 40vw;
-  background-color: #98c398;
+  width: 70vw;
   height: 100vh;
 }
 
@@ -22,6 +22,7 @@
   width: 400px;
   height: 600px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
   h2 {
     color: #222;
     margin: 0;
@@ -80,7 +81,8 @@
 
 .self-intro {
   flex: 7;
-  text-align: right;
+  text-align: left;
+  margin-left: 3em;
   h1 {
     font-size: 3em;
     margin-bottom: 0;
@@ -92,15 +94,26 @@
   top: 10vh;
   display: flex;
   max-width: 60%;
-  left: 15%;
+  left: 20%;
 }
 
 .paragraphs {
-  float: right;
-  max-width: 50%;
   margin-right: 3em;
-  p {
-    margin-top: 1em;
+}
+
+.codeblock-wrapper {
+  margin-top: 3em;
+}
+
+.codeblock {
+  text-align: left;
+  white-space: pre-wrap;
+  min-width: 700px;
+  &:after {
+    content: "|";
+    color: #61afef;
+    animation: blink 1s step-start 0s infinite;
+    -webkit-animation: blink 1s step-start 0s infinite;
   }
 }
 
@@ -128,5 +141,37 @@
     &:focus {
       outline: 0;
     }
+  }
+}
+
+.highlight-const {
+  color: #c678dd;
+}
+
+.highlight-variable {
+  color: #e5c07b;
+}
+
+.highlight-equalsign {
+  color: #56b6c2;
+}
+
+.highlight-key {
+  color: #e06c75;
+}
+
+.highlight-string {
+  color: #98c398;
+}
+
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.0;
   }
 }

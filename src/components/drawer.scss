@@ -1,0 +1,46 @@
+$drawer-width: 175px;
+
+.drawer-wrapper {
+  position: fixed;
+  display: flex;
+  left: -$drawer-width;
+}
+
+.drawer {
+  height: 100vh;
+  width: $drawer-width;
+  transition: 0.3s;
+  background-color: #222;
+  display: flex;
+  ul {
+    list-style: none;
+    margin: auto;
+    li {
+      font-size: 1.5em;
+      margin: 2em 1em;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  }
+}
+
+.drawer-button {
+  display: flex;
+  top: calc(50% - 80px);
+  width: 30px;
+  height: 80px;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: #222;
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.drawer-open {
+  margin-left: $drawer-width;
+}
+
+#arrow {
+  margin: auto;
+}
