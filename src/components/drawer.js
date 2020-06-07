@@ -23,9 +23,10 @@ const Drawer = () => {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/blogs"}>
-              Blogs
-            </Link>
+            <Link to={"/blogs"}>Blogs</Link>
+          </li>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/16UJuHO9Px1LX7pEAqr4EKQJu7pj4KPrD/view?usp=sharing">Resume</a>
           </li>
         </ul>
       </nav>

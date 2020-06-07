@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Typed from "typed.js";
 import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -56,16 +56,32 @@ class PageIndex extends React.Component {
             </div>
             <div className="personal-card-bottom">
               <div className="socialmedia-icons">
-                <a target="_blank" href="https://twitter.com/tismy97">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://twitter.com/tismy97"
+                >
                   <FontAwesomeIcon size="lg" icon={faTwitter} />
                 </a>
-                <a target="_blank" href="https://instagram.com/oddguan">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://instagram.com/oddguan"
+                >
                   <FontAwesomeIcon size="lg" icon={faInstagram} />
                 </a>
-                <a target="_blank" href="https://github.com/oddguan">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/oddguan"
+                >
                   <FontAwesomeIcon size="lg" icon={faGithub} />
                 </a>
-                <a target="_blank" href="https://linkedin.com/in/chenxiao-guan">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://linkedin.com/in/chenxiao-guan"
+                >
                   <FontAwesomeIcon size="lg" icon={faLinkedin} />
                 </a>
               </div>
@@ -75,8 +91,9 @@ class PageIndex extends React.Component {
             <div className="paragraphs">
               <h1>Hello There!</h1>
               <h2>Welcome to my space on the World Wide Web.</h2>
-              <div className="codeblock-wrapper"></div>
+              <div id="typer-wrapper">
               <div id="typer" />
+              </div>
             </div>
           </div>
         </div>

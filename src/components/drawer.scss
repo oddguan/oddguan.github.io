@@ -1,23 +1,24 @@
-$drawer-width: 175px;
+$drawer-width: 250px;
 
 .drawer-wrapper {
   position: fixed;
   display: flex;
   left: -$drawer-width;
+  z-index: 100;
 }
 
 .drawer {
   height: 100vh;
   width: $drawer-width;
   transition: 0.3s;
-  background-color: #222;
+  background-color: #333;
   display: flex;
   ul {
     list-style: none;
     margin: auto;
     li {
       font-size: 1.5em;
-      margin: 2em 1em;
+      margin: 1.5em 1em;
       font-family: 'Courier New', Courier, monospace;
     }
   }
@@ -44,3 +45,20 @@ $drawer-width: 175px;
 #arrow {
   margin: auto;
 }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .drawer-button {
+    display: none;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .drawer-button {
+    display: none;
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {}

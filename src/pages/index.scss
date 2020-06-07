@@ -1,5 +1,7 @@
 .container {
+  position: relative;
   display: flex;
+  justify-content: center;
 }
 
 .landing-left {
@@ -16,10 +18,8 @@
 .personal-card {
   color: #222;
   display: flex;
-  flex: 3;
   flex-direction: column;
   background-color: #e2f3e2;
-  width: 400px;
   height: 600px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
   min-width: 350px;
@@ -44,6 +44,7 @@
   flex: 2;
   text-align: center;
   h4 {
+    font-weight: 300;
     margin: 1em;
     color: #222;
   }
@@ -87,25 +88,24 @@
 }
 
 .self-intro {
-  flex: 7;
   text-align: left;
   margin-left: 3em;
+  margin-right: 3em;
+  width: 700px;
   h1 {
     font-size: 3em;
     margin-bottom: 0;
   }
+  h2 {
+    font-weight: 400;
+  }
 }
 
 .main-content {
-  position: fixed;
-  top: 10vh;
   display: flex;
-  max-width: 60%;
-  left: 20%;
-}
-
-.paragraphs {
-  margin-right: 3em;
+  position: absolute;
+  margin: 4em auto;
+  padding: 2em;
 }
 
 .codeblock-wrapper {
@@ -183,8 +183,50 @@
   }
 }
 
+#typer-wrapper {
+  min-height: 250px;
+}
+
 #typer {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9em;
   display: inline;
+}
+
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .landing-right {
+    display: none;
+  }
+  .main-content {
+    flex-direction: column;
+    padding: 0;
+  }
+  .personal-card {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  #typer {
+    max-width: 90%;
+  }
+  h2 {
+    margin-top: 1em;
+  }
+  .self-intro {
+    margin-left: 1em;
+    margin-right: 1em;
+    max-width: 90%;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  .self-intro {
+    width: auto;
+  }
 }
