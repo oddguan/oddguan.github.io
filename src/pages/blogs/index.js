@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby";
 import Bio from "../../components/bio";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
-import Drawer from "../../components/drawer";
 import { rhythm } from "../../utils/typography";
 
 import "./index.css";
@@ -16,8 +15,6 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <>
-        <Drawer />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO
             title="All posts"
@@ -50,7 +47,6 @@ class BlogIndex extends React.Component {
             );
           })}
         </Layout>
-      </>
     );
   }
 }

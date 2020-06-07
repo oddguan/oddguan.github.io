@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import { slide as Menu } from "react-burger-menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import "./drawer.scss";
 import useWindowSize from "../hooks/useWindowSize";
-import Selector from "./selector";
 
 const Drawer = () => {
   const [desktopOpen, setDesktopOpen] = useState(false);
@@ -38,16 +38,6 @@ const Drawer = () => {
     );
   };
 
-  const activePage = () => {
-    if (window.location.pathname.includes("blogs")) {
-      return "blogs";
-    }
-    if (window.location.pathname.includes("privacy")) {
-      return "privacy";
-    }
-    return "home";
-  };
-
   if (!isMobile) {
     return (
       <div
@@ -63,12 +53,7 @@ const Drawer = () => {
     );
   } else {
     // isMobile
-    return (
-      <div className="burger-nav">
-        <FontAwesomeIcon icon={faBars} id="burger" size="lg" />
-        {/* {navItems()} */}
-      </div>
-    );
+    return <Menu>{navItems()}</Menu>;
   }
 };
 

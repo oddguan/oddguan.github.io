@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Drawer from "../components/drawer";
 import { rhythm, scale } from "../utils/typography"
 
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
@@ -54,8 +55,11 @@ class Layout extends React.Component {
       )
     }
     return (
+      <>
+      <Drawer />
       <div
         style={{
+          marginTop: '1em',
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: rhythm(24),
@@ -71,6 +75,7 @@ class Layout extends React.Component {
           </a>
         </footer>
       </div>
+      </>
     )
   }
 }

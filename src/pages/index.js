@@ -34,11 +34,11 @@ class PageIndex extends React.Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="container">
+      <div id="app-container" className="container">
         <div className="landing-left"></div>
         <div className="landing-right"></div>
+        <div id="main-content" className="main-content">
         <Drawer />
-        <div className="main-content">
           <div className="personal-card">
             <div className="personal-card-main">
               <Img
