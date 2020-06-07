@@ -1,18 +1,27 @@
+html, body {
+  height: 100%;
+}
+
 .container {
   position: relative;
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
 .landing-left {
+  left: 0;
+  position: fixed;
   width: 30vw;
   background-color: #98c398;
+  height: 100%;
 }
 
 .landing-right {
+  position: fixed;
   color: #222;
   width: 70vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .personal-card {
