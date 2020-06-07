@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { DiscussionEmbed } from "disqus-react"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Comment from "../components/comment";
 import { rhythm, scale } from "../utils/typography"
 
 import "katex/dist/katex.min.css"
@@ -14,11 +14,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    const disqusShortname = "oddguan-io"
-    const disqusConfig = {
-      identifier: post.id,
-      title: post.frontmatter.title,
-    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -44,7 +39,7 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
-
+        <Comment />
         <ul
           style={{
             display: `flex`,
@@ -56,22 +51,21 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={`/blogs${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={`/blogs${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
           </li>
         </ul>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
-    )
+    );
   }
 }
 
