@@ -5,7 +5,7 @@ import { faChevronRight, faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "./drawer.scss";
 import useWindowSize from "../hooks/useWindowSize";
-import Selector from './selector';
+import Selector from "./selector";
 
 const Drawer = () => {
   const [desktopOpen, setDesktopOpen] = useState(false);
@@ -39,13 +39,13 @@ const Drawer = () => {
   };
 
   const activePage = () => {
-    if (window.location.pathname.includes('blogs')) {
-      return 'blogs';
+    if (window.location.pathname.includes("blogs")) {
+      return "blogs";
     }
-    if (window.location.pathname.includes('privacy')) {
-      return 'privacy';
+    if (window.location.pathname.includes("privacy")) {
+      return "privacy";
     }
-    return 'home';
+    return "home";
   };
 
   if (!isMobile) {
@@ -55,10 +55,7 @@ const Drawer = () => {
         onMouseEnter={() => setDesktopOpen(true)}
         className="drawer-wrapper"
       >
-        <nav className={classes}>
-          {navItems()}
-          <Selector activePage={activePage()} />
-        </nav>
+        <nav className={classes}>{navItems()}</nav>
         <div className="drawer-button">
           <FontAwesomeIcon icon={faChevronRight} id="arrow" />
         </div>
