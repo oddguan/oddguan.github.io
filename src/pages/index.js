@@ -21,10 +21,10 @@ class PageIndex extends React.Component {
         <span class="highlight-const">const</span> 
           <span class="highlight-variable">description</span> <span class="highlight-equalsign">=</span> {<br> 
           &nbsp;&nbsp;<span class="highlight-key">name</span>: <span class="highlight-string">"Chenxiao Guan"</span>,<br>
-          &nbsp;&nbsp;<span class="highlight-key">speaks</span>: [<span class="highlight-string">"English"</span>, <span class="highlight-string">"Chinese"</span>],<br>
+          &nbsp;&nbsp;<span class="highlight-key">speaks</span>: [<span class="highlight-string">"English"</span>, <span class="highlight-string">"Mandarin Chinese"</span>],<br>
           &nbsp;&nbsp;<span class="highlight-key">interestedIn</span>: [<span class="highlight-string">"Web Development"</span>, <span class="highlight-string">"DevOps"</span>, <span class="highlight-string">"Digital Privacy"</span>],<br>
           &nbsp;&nbsp;<span class="highlight-key">favoriteLanguage</span>: <span class="highlight-string">"JavaScript"</span>,<br>
-          &nbsp;&nbsp;<span class="highlight-key">frameworkOfChoice</span>: <span class="highlight-string">"React"</span>,<br>
+          &nbsp;&nbsp;<span class="highlight-key">frameworksOfChoice</span>: [<span class="highlight-string">"React"</span>, <span class="highlight-string">"Express"</span>],<br>
         };`,
       ],
       typeSpeed: 30,

@@ -46,6 +46,19 @@ $drawer-width: 250px;
   margin: auto;
 }
 
+.burger-nav {
+  width: 100vw;
+}
+
+#burger {
+  margin-left: 1em;
+  margin-top: 0.8em;
+}
+
+#nav-hover-selector {
+  font-size: 1.5em;
+}
+
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
   .drawer-button {

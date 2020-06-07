@@ -196,12 +196,16 @@
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
+  .landing-left {
+    display: none;
+  }
   .landing-right {
     display: none;
   }
   .main-content {
     flex-direction: column;
     padding: 0;
+    margin-top: 3em;
   }
   .personal-card {
     max-width: 80%;
