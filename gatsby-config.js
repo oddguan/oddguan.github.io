@@ -60,6 +60,23 @@ module.exports = {
                 sh: "bash",
                 "c++": "cpp",
               },
+              languageExtensions: [
+                {
+                  extend: "javascript",
+                  definition: {
+                    const: {
+                      pattern: /(\b(?:const)\s+)[\w.\\]+/,
+                      lookbehind: true,
+                      greedy: true,
+                    },
+                    let: {
+                      pattern: /(\b(?:let)\s+)[\w.\\]+/,
+                      lookbehind: true,
+                      greedy: true,
+                    },
+                  },
+                },
+              ],
             },
           },
           `gatsby-remark-copy-linked-files`,
