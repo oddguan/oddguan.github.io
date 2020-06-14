@@ -5,7 +5,7 @@
  */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #abb2bf;
+  color: #e06c75;
   background: none;
   font-family: 'Courier New', Courier, monospace;
   text-align: left;
@@ -89,6 +89,7 @@ pre[class*="language-"] {
 .token.symbol,
 .token.attr-name,
 .token.const,
+.token.this,
 .token.deleted {
   color: #d19a66;
 }

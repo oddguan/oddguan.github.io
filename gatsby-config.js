@@ -65,13 +65,17 @@ module.exports = {
                   extend: "javascript",
                   definition: {
                     const: {
-                      pattern: /(\b(?:const)\s+)[\w.\\]+/,
+                      pattern: /(const\s+)[\w.\\]+/,
                       lookbehind: true,
                       greedy: true,
                     },
                     let: {
-                      pattern: /(\b(?:let)\s+)[\w.\\]+/,
+                      pattern: /(\blet\s+)[\w.\\]+/,
                       lookbehind: true,
+                      greedy: true,
+                    },
+                    this: {
+                      pattern: /(\bthis)+/,
                       greedy: true,
                     },
                   },

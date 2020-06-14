@@ -9,6 +9,13 @@ This will be constantly updated, as I find other things worth memorizing.
 Last Updated: 2020-06-13 23:41:18
 
 ```javascript
+/**
+ * File Name : memo.js
+ * Creator : Chenxiao Guan
+ * Date : 2020-06-13
+ * Description : Things to memorize before interview
+ */
+
 const assert = require('assert');
 
 // quick select and quick sort
@@ -23,6 +30,10 @@ function partition(arr, left, right) {
   }
   [arr[i + 1], arr[right]] = [arr[right], arr[i + 1]];
   return i + 1;
+}
+
+function foo() {
+  console.log('bar');
 }
 
 function quickSort(arr) {
@@ -116,8 +127,6 @@ LRUCache.prototype.get = function (key) {
 };
 
 // Queue
-// This `Node` definition will mess with the LRUCache Node
-// So be careful when testing
 function Node(value) {
   this.value = value;
   this.next = null;
@@ -160,10 +169,8 @@ Queue.prototype.pop = function () {
 };
 
 // Priority Queue
-// Constructing a PQ given an array is O(N) in runtime
 function PriorityQueue(data = [], compare) {
   this.data = data;
-  // default to a min heap
   this.compare = compare ? compare : (a, b) => (a < b ? -1 : a > b ? 1 : 0);
   this.length = data.length;
   if (data.length !== 0) {
@@ -228,7 +235,7 @@ PriorityQueue.prototype.pop = function () {
   return first;
 };
 
-// ------Test functions------
+// Test functions
 function testQuickSort() {
   const times = 10000;
   for (let i = 0; i < times; ++i) {
@@ -270,4 +277,5 @@ function main() {
 }
 
 main();
+
 ```
