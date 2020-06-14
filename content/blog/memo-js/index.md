@@ -1,12 +1,12 @@
 ---
 title: My Memo For the Algorithmic Interviews
-date: Sat Jun 13 23:30:59 EDT 2020
+date: 2020-06-13 23:41:18
 description: This is a javascript code snippet for me to memorize everyday so that I don't fail on these on an algorithmic interview.
 ---
 
 This will be constantly updated, as I find other things worth memorizing. 
 
-Last Updated: Sat Jun 13 23:30:59 EDT 2020
+Last Updated: 2020-06-13 23:41:18
 
 ```javascript
 const assert = require('assert');
