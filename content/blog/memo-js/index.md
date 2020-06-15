@@ -6,7 +6,7 @@ description: This is a javascript code snippet for me to memorize everyday so th
 
 This will be constantly updated, as I find other things worth memorizing. 
 
-Last Updated: 2020-06-13 23:41:18
+Lastly Updated: 2020-06-15 10:37:18
 
 ```javascript
 /**
@@ -183,14 +183,14 @@ function PriorityQueue(data = [], compare) {
 PriorityQueue.prototype._siftDown = function (i) {
   const { data, compare, length } = this;
   const halfLength = length >>> 1;
-  const e = data[i]; 
+  const e = data[i];
   while (i < halfLength) {
     let bestChild = (i << 1) + 1; // left child first
     const right = bestChild + 1;
     if (right < length && compare(data[bestChild], data[right] > 0)) {
       bestChild = right;
     }
-    if (compare(data[bestChild] >= e)) {
+    if (compare(data[bestChild], e) >= 0) {
       break;
     }
     data[i] = data[bestChild];
