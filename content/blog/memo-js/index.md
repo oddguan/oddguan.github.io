@@ -6,7 +6,7 @@ description: This is a javascript code snippet for me to memorize everyday so th
 
 This will be constantly updated, as I find other things worth memorizing. 
 
-Lastly Updated: 2020-06-15 10:37:18
+Lastly Updated: 2020-06-22 23:40:16
 
 ```javascript
 /**
@@ -17,6 +17,14 @@ Lastly Updated: 2020-06-15 10:37:18
  */
 
 const assert = require('assert');
+
+// gcd
+function gcd(a, b) {
+  if (a === 0) {
+    return b;
+  }
+  return gcd(b % a, a);
+}
 
 // quick select and quick sort
 function partition(arr, left, right) {
