@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chenxiao's Blog]]></title><description><![CDATA[This is a technical blog]]></description><link>http://oddguan.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Jun 2020 03:42:14 GMT</lastBuildDate><item><title><![CDATA[My Memo For the Algorithmic Interviews]]></title><description><![CDATA[This will be constantly updated, as I find other things worth memorizing.  Lastly Updated: 2020-06-22 23:40:16]]></description><link>http://oddguan.io/memo-js/</link><guid isPermaLink="false">http://oddguan.io/memo-js/</guid><pubDate>Sat, 13 Jun 2020 23:41:18 GMT</pubDate><content:encoded>&lt;p&gt;This will be constantly updated, as I find other things worth memorizing. &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chenxiao's Blog]]></title><description><![CDATA[This is a technical blog]]></description><link>http://oddguan.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Jul 2020 02:38:38 GMT</lastBuildDate><item><title><![CDATA[Preparation for the CKA Exam 01]]></title><description><![CDATA[Etcd Etcd is a key-value store that runs on the master node, which stores cluster information in a key-value fashion. Basic Etcd operations…]]></description><link>http://oddguan.io/k8s1/</link><guid isPermaLink="false">http://oddguan.io/k8s1/</guid><pubDate>Tue, 30 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Etcd&lt;/h2&gt;
+&lt;p&gt;Etcd is a key-value store that runs on the master node, which stores cluster information in a key-value fashion.&lt;/p&gt;
+&lt;h3&gt;Basic Etcd operations&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download Etcd from github, extract it and run locally&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;./etcd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This command will start the etcd server at the port 2379 by default.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Interact with Etcd through the &lt;code class=&quot;language-text&quot;&gt;etcdctl&lt;/code&gt; cli. For example: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;set a key value pair by running &lt;code class=&quot;language-text&quot;&gt;etcdctl set key1 value1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;retrieve the value of a key by running &lt;code class=&quot;language-text&quot;&gt;etcdctl get key1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;to get some help, just run &lt;code class=&quot;language-text&quot;&gt;etcdctl&lt;/code&gt; without any arguments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;One can set the API version of the etcdctl by setting the env var &lt;code class=&quot;language-text&quot;&gt;ETCDCTL_API&lt;/code&gt;. For example, setting it by doing &lt;code class=&quot;language-text&quot;&gt;export ETCDCTL_API=3&lt;/code&gt; will use version 3 of the API. &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Kube-Scheduler&lt;/h2&gt;
+&lt;p&gt;The Kube-scheduler decides what pod should go to what worker node. However, keep in mind that the kube-scheduler only &lt;strong&gt;decides&lt;/strong&gt; where should the pod go, but it is the kube-apiserver that actually talks to the kubelet in order to actually deploy that pod on the corresponding worker node. &lt;/p&gt;
+&lt;p&gt;What is the process of a kube-scheduler determining the schedule of a pod?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Filter Nodes. The scheduler filters all worker nodes based on the requirement of the pod, e.g. number of cpus, amount of rams, etc.&lt;/li&gt;
+&lt;li&gt;Rank Nodes. The scheduler then ranks all qualified worker nodes by a ranking algorithm (can be customized). &lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[My Memo For the Algorithmic Interviews]]></title><description><![CDATA[This will be constantly updated, as I find other things worth memorizing.  Lastly Updated: 2020-06-22 23:40:16]]></description><link>http://oddguan.io/memo-js/</link><guid isPermaLink="false">http://oddguan.io/memo-js/</guid><pubDate>Sat, 13 Jun 2020 23:41:18 GMT</pubDate><content:encoded>&lt;p&gt;This will be constantly updated, as I find other things worth memorizing. &lt;/p&gt;
 &lt;p&gt;Lastly Updated: 2020-06-22 23:40:16&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/**
  * File Name : memo.js
