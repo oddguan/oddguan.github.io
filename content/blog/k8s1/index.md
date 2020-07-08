@@ -1,6 +1,7 @@
 ---
 title: Preparation for the CKA Exam 01
-date: Mon Jun 29 23:31:30 EDT 2020
+date:  "2020-06-30"
+description: Notes for the preparation of the CKA exam
 ---
 
 ## Etcd
