@@ -29,7 +29,7 @@ const Drawer = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://drive.google.com/file/d/16UJuHO9Px1LX7pEAqr4EKQJu7pj4KPrD/view?usp=sharing"
+            href="https://drive.google.com/file/d/12PktZSTZNfqph29p7c51dErzKgbG-dxh/view?usp=sharing"
           >
             Resume
           </a>
