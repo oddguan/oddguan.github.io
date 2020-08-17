@@ -164,7 +164,6 @@ function Foo() {}
 let f = new Foo();
 console.log(Foo[Symbol.hasInstance](f)); // true
 console.log(f instanceof Foo); // true
-
 class Bar {}
 class Baz extends Bar {
     static [Symbol.hasInstance]() {

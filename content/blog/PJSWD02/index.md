@@ -129,7 +129,7 @@ js会将所有object都隐式看待为true，所以第一种情况的result是tr
 
 ### Number类的一些gotcha
 
-1. JS的所有数字类型都是用IEEE754存储的double precision floating类型。ES6之后可以用`Number.isInteger`来判断一个Number是否为整数。除此之外，`Number.isSafeInteger`可以来判断Number是否在合法的整数范围之内，也就是$-2^53+1$至$2^53-1$。
+1. JS的所有数字类型都是用IEEE754存储的double precision floating类型。ES6之后可以用`Number.isInteger`来判断一个Number是否为整数。除此之外，`Number.isSafeInteger`可以来判断Number是否在合法的整数范围之内，也就是$-2^{53}+1$至$2^{53}-1$。
 
 ## String
 
