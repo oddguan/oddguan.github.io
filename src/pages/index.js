@@ -35,10 +35,21 @@ class PageIndex extends React.Component {
     const { data } = this.props;
     return (
       <div id="app-container" className="container">
+        <SEO
+          title="Home"
+          keywords={[
+            `Chenxiao Guan`,
+            `Chenxiao`,
+            `Guan`,
+            `Software Engineer`,
+            `Student`,
+            `Technical Blog`,
+          ]}
+        />
         <div className="landing-left"></div>
         <div className="landing-right"></div>
         <div id="main-content" className="main-content">
-        <Drawer />
+          <Drawer />
           <div className="personal-card">
             <div className="personal-card-main">
               <Img
@@ -92,7 +103,7 @@ class PageIndex extends React.Component {
               <h1>Hello There!</h1>
               <h2>Welcome to my space on the World Wide Web.</h2>
               <div id="typer-wrapper">
-              <div id="typer" />
+                <div id="typer" />
               </div>
             </div>
           </div>
