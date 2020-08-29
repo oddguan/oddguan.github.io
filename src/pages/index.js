@@ -12,6 +12,7 @@ import {
 
 import "./index.scss";
 import Drawer from "../components/drawer";
+import SEO from "../components/seo";
 
 class PageIndex extends React.Component {
   componentDidMount() {
